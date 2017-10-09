@@ -11,7 +11,7 @@ class Song
             $sentences[] = $this->bottlesOnTheWall($i);
             $sentences[] = "Take one down and pass it around, " . $this->bottles($i - 1) . " of beer on the wall.";
         }
-        $sentences[] = "No more bottles of beer on the wall, " . $this->bottles(0) . " of beer.";
+        $sentences[] = ucfirst($this->bottles(0)) . " of beer on the wall, " . $this->bottles(0) . " of beer.";
         $sentences[] = "Go to the store and buy some more, 99 bottles of beer on the wall.";
         return $sentences;
     }
