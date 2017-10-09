@@ -9,7 +9,7 @@ class Song
         $sentences = [];
         for ($i = 99; $i >= 2; $i--) {
             $sentences[] = $this->bottlesOnTheWall($i);
-            $sentences[] = "Take one down and pass it around, " . ($i-1) . " bottles of beer on the wall.";
+            $sentences[] = "Take one down and pass it around, " . $this->bottles($i-1) . " of beer on the wall.";
         }
         $sentences[] = "1 bottle of beer on the wall, 1 bottle of beer.";
         $sentences[] = "Take one down and pass it around, no more bottles of beer on the wall.";
