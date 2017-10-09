@@ -4,12 +4,14 @@ namespace LuisRovirosa;
 
 class Song
 {
+    const MAX_BOTTLES = 99;
+
     public function song(): array
     {
         $sentences = [];
-        for ($i = 99; $i >= 0; $i--) {
-            $sentences[] = $this->bottlesOnTheWall($i);
-            $sentences[] = $this->action($i) . ", " . $this->bottles($i - 1) . " of beer on the wall.";
+        for ($i = 0; $i <= self::MAX_BOTTLES; $i++) {
+            $sentences[] = $this->bottlesOnTheWall(self::MAX_BOTTLES - $i);
+            $sentences[] = $this->action(self::MAX_BOTTLES - $i) . ", " . $this->bottles(self::MAX_BOTTLES - $i - 1) . " of beer on the wall.";
         }
         return $sentences;
     }
