@@ -35,6 +35,14 @@ class Song99BottlesTest extends TestCase
     }
 
     /** @test */
+    public function the_last_strophe_is_correct()
+    {
+        $song = new Song();
+        $this->assertEquals('No more bottles of beer on the wall, no more bottles of beer.', $song->song()[198]);
+        $this->assertEquals('Go to the store and buy some more, 99 bottles of beer on the wall.', $song->song()[199]);
+    }
+
+    /** @test */
     public function the_length_of_the_song_is_correct()
     {
         $song = new Song();
