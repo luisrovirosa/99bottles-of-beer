@@ -20,7 +20,7 @@ class Song
     public function firstVerseOfStrophe(int $numberOfBottles): string
     {
         return ucfirst($this->bottlesOnTheWall($numberOfBottles)) . ", "
-            . $this->bottles($numberOfBottles) . " of beer.";
+            . $this->bottlesOfBeer($numberOfBottles) . ".";
     }
 
     public function secondVerseOfStrophe($numberOfBottles): string
@@ -31,7 +31,12 @@ class Song
 
     public function bottlesOnTheWall(int $numberOfBottles): string
     {
-        return $this->bottles($numberOfBottles) . " of beer on the wall";
+        return $this->bottlesOfBeer($numberOfBottles) . " on the wall";
+    }
+
+    private function bottlesOfBeer(int $numberOfBottles)
+    {
+        return $this->bottles($numberOfBottles) . " of beer";
     }
 
     private function bottles(int $numberOfBottles): string
