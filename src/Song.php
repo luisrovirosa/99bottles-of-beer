@@ -8,7 +8,7 @@ class Song
     {
         $sentences = [];
         for ($i = 99; $i >= 2; $i--) {
-            $sentences[] = "$i bottles of beer on the wall, $i bottles of beer.";
+            $sentences[] = $this->bottlesOnTheWall($i);
             $sentences[] = "Take one down and pass it around, " . ($i-1) . " bottles of beer on the wall.";
         }
         $sentences[] = "1 bottle of beer on the wall, 1 bottle of beer.";
@@ -23,5 +23,10 @@ class Song
         foreach ($this->song() as $sentence){
             echo "$sentence\n";
         }
+    }
+
+    public function bottlesOnTheWall(int $numberOfBottles): string
+    {
+        return "$numberOfBottles bottles of beer on the wall, $numberOfBottles bottles of beer.";
     }
 }
