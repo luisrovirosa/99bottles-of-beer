@@ -10,7 +10,7 @@ class Song
     {
         $sentences = [];
         for ($i = 0; $i <= self::MAX_BOTTLES; $i++) {
-            $sentences[] = $this->bottlesOnTheWall(self::MAX_BOTTLES - $i);
+            $sentences[] = $this->firstVerseOfStrophe(self::MAX_BOTTLES - $i);
             $sentences[] = $this->action(self::MAX_BOTTLES - $i) . ", " . $this->bottles(self::MAX_BOTTLES - $i - 1) . " of beer on the wall.";
         }
         return $sentences;
@@ -23,7 +23,7 @@ class Song
         }
     }
 
-    public function bottlesOnTheWall(int $numberOfBottles): string
+    public function firstVerseOfStrophe(int $numberOfBottles): string
     {
         return ucfirst($this->bottles($numberOfBottles)) . " of beer on the wall, " . $this->bottles($numberOfBottles) . " of beer.";
     }
