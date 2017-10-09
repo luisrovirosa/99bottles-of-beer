@@ -12,7 +12,7 @@ class Song
         for ($i = 0; $i <= self::MAX_BOTTLES; $i++) {
             $numberOfBottles = self::MAX_BOTTLES - $i;
             $sentences[] = $this->firstVerseOfStrophe($numberOfBottles);
-            $sentences[] = $this->action($numberOfBottles) . ", " . $this->bottles($numberOfBottles - 1) . " of beer on the wall.";
+            $sentences[] = $this->secondVerseOfStrophe($numberOfBottles);
         }
         return $sentences;
     }
@@ -47,5 +47,14 @@ class Song
             return 'Go to the store and buy some more';
         }
         return "Take one down and pass it around";
+    }
+
+    /**
+     * @param $numberOfBottles
+     * @return string
+     */
+    public function secondVerseOfStrophe($numberOfBottles): string
+    {
+        return $this->action($numberOfBottles) . ", " . $this->bottles($numberOfBottles - 1) . " of beer on the wall.";
     }
 }
