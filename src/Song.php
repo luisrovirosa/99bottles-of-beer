@@ -11,7 +11,7 @@ class Song
             $sentences[] = $this->bottlesOnTheWall($i);
             $sentences[] = "Take one down and pass it around, " . $this->bottles($i-1) . " of beer on the wall.";
         }
-        $sentences[] = "1 bottle of beer on the wall, 1 bottle of beer.";
+        $sentences[] = $this->bottles(1) . " of beer on the wall, 1 bottle of beer.";
         $sentences[] = "Take one down and pass it around, no more bottles of beer on the wall.";
         $sentences[] = "No more bottles of beer on the wall, no more bottles of beer.";
         $sentences[] = "Go to the store and buy some more, 99 bottles of beer on the wall.";
@@ -32,6 +32,9 @@ class Song
 
     private function bottles(int $numberOfBottles): string
     {
+        if ($numberOfBottles === 1){
+            return "1 bottle";
+        }
         return "$numberOfBottles bottles";
     }
 }
