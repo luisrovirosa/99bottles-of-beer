@@ -10,8 +10,9 @@ class Song
     {
         $sentences = [];
         for ($i = 0; $i <= self::MAX_BOTTLES; $i++) {
-            $sentences[] = $this->firstVerseOfStrophe(self::MAX_BOTTLES - $i);
-            $sentences[] = $this->action(self::MAX_BOTTLES - $i) . ", " . $this->bottles(self::MAX_BOTTLES - $i - 1) . " of beer on the wall.";
+            $numberOfBottles = self::MAX_BOTTLES - $i;
+            $sentences[] = $this->firstVerseOfStrophe($numberOfBottles);
+            $sentences[] = $this->action($numberOfBottles) . ", " . $this->bottles($numberOfBottles - 1) . " of beer on the wall.";
         }
         return $sentences;
     }
