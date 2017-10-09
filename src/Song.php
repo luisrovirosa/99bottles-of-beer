@@ -29,6 +29,11 @@ class Song
             . $this->bottlesOnTheWall($numberOfBottles - 1) . ".";
     }
 
+    public function bottlesOnTheWall(int $numberOfBottles): string
+    {
+        return $this->bottles($numberOfBottles) . " of beer on the wall";
+    }
+
     private function bottles(int $numberOfBottles): string
     {
         if ($numberOfBottles === 0) {
@@ -54,14 +59,5 @@ class Song
         foreach ($this->song() as $sentence) {
             echo "$sentence\n";
         }
-    }
-
-    /**
-     * @param int $numberOfBottles
-     * @return string
-     */
-    public function bottlesOnTheWall(int $numberOfBottles): string
-    {
-        return $this->bottles($numberOfBottles) . " of beer on the wall";
     }
 }
