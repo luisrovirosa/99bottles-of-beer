@@ -12,7 +12,7 @@ class Song
             $sentences[] = "Take one down and pass it around, " . $this->bottles($i - 1) . " of beer on the wall.";
         }
         $sentences[] = $this->bottles(1) . " of beer on the wall, " . $this->bottles(1) . " of beer.";
-        $sentences[] = "Take one down and pass it around, no more bottles of beer on the wall.";
+        $sentences[] = "Take one down and pass it around, " . $this->bottles(0) . " of beer on the wall.";
         $sentences[] = "No more bottles of beer on the wall, no more bottles of beer.";
         $sentences[] = "Go to the store and buy some more, 99 bottles of beer on the wall.";
         return $sentences;
@@ -32,7 +32,9 @@ class Song
 
     private function bottles(int $numberOfBottles): string
     {
-        if ($numberOfBottles === 1) {
+        if ($numberOfBottles === 0) {
+            return "no more bottles";
+        } elseif ($numberOfBottles === 1) {
             return "1 bottle";
         }
         return "$numberOfBottles bottles";
