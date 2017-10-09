@@ -33,4 +33,11 @@ class Song99BottlesTest extends TestCase
         $song = new Song();
         $this->assertEquals('Take one down and pass it around, 97 bottles of beer on the wall.', $song->song()[3]);
     }
+
+    /** @test */
+    public function the_length_of_the_song_is_correct()
+    {
+        $song = new Song();
+        $this->assertCount(200, $song->song());
+    }
 }
