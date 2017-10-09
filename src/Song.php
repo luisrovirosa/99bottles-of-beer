@@ -17,4 +17,11 @@ class Song
         $sentences[] = "Go to the store and buy some more, 99 bottles of beer on the wall.";
         return $sentences;
     }
+
+    public function sing()
+    {
+        foreach ($this->song() as $sentence){
+            echo "$sentence\n";
+        }
+    }
 }

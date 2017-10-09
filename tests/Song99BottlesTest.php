@@ -57,4 +57,12 @@ class Song99BottlesTest extends TestCase
         $song = new Song();
         $this->assertCount(200, $song->song());
     }
+
+    /** @test */
+    public function prints_the_song()
+    {
+        $this->markTestSkipped("Not tested automatically.");
+        $song = new Song();
+        $song->sing();
+    }
 }
