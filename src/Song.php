@@ -27,6 +27,11 @@ class Song
 
     public function bottlesOnTheWall(int $numberOfBottles): string
     {
-        return "$numberOfBottles bottles of beer on the wall, $numberOfBottles bottles of beer.";
+        return $this->bottles($numberOfBottles) . " of beer on the wall, " . $this->bottles($numberOfBottles) . " of beer.";
+    }
+
+    private function bottles(int $numberOfBottles): string
+    {
+        return "$numberOfBottles bottles";
     }
 }
