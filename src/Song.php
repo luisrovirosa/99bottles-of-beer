@@ -19,14 +19,23 @@ class Song
 
     public function firstVerseOfStrophe(int $numberOfBottles): string
     {
-        return ucfirst($this->bottlesOnTheWall($numberOfBottles)) . ", "
-            . $this->bottlesOfBeer($numberOfBottles) . ".";
+        return $this->verse(
+            $this->bottlesOnTheWall($numberOfBottles),
+            $this->bottlesOfBeer($numberOfBottles)
+        );
     }
 
     public function secondVerseOfStrophe($numberOfBottles): string
     {
-        return $this->action($numberOfBottles) . ", "
-            . $this->bottlesOnTheWall($numberOfBottles - 1) . ".";
+        return $this->verse(
+            $this->action($numberOfBottles),
+            $this->bottlesOnTheWall($numberOfBottles - 1)
+        );
+    }
+
+    private function verse(string $firstSentence, string $secondSentence): string
+    {
+        return ucfirst($firstSentence) . ', ' . $secondSentence . '.';
     }
 
     public function bottlesOnTheWall(int $numberOfBottles): string
