@@ -9,10 +9,10 @@ class Song
         $sentences = [];
         for ($i = 99; $i >= 1; $i--) {
             $sentences[] = $this->bottlesOnTheWall($i);
-            $sentences[] = "Take one down and pass it around, " . $this->bottles($i - 1) . " of beer on the wall.";
+            $sentences[] = $this->action($i) . ", " . $this->bottles($i - 1) . " of beer on the wall.";
         }
         $sentences[] = ucfirst($this->bottles(0)) . " of beer on the wall, " . $this->bottles(0) . " of beer.";
-        $sentences[] = "Go to the store and buy some more, 99 bottles of beer on the wall.";
+        $sentences[] = $this->action(0) . ", 99 bottles of beer on the wall.";
         return $sentences;
     }
 
@@ -36,5 +36,14 @@ class Song
             return "1 bottle";
         }
         return "$numberOfBottles bottles";
+    }
+
+
+    public function action(int $numberOfBottles): string
+    {
+        if ($numberOfBottles === 0){
+            return 'Go to the store and buy some more';
+        }
+        return "Take one down and pass it around";
     }
 }
